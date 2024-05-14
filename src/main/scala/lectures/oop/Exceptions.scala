@@ -7,7 +7,7 @@ object Exceptions extends App {
   //  this ^^ will crash with a NPE
 
   // 1. throwing exceptions
-   val aWeirdValue: String = throw new NullPointerException // also crashes
+  // val aWeirdValue: String = throw new NullPointerException // also crashes
 
   // throwable classes extend the Throwable class.
   // Exception and Error are the major Throwable subtypes
@@ -34,7 +34,6 @@ object Exceptions extends App {
 
   // 3. how to define your own exceptions
   class MyException extends Exception
-
   val exception = new MyException
 
   //  throw exception
@@ -61,9 +60,7 @@ object Exceptions extends App {
   //  val noLimit = infinite
 
   class OverflowException extends RuntimeException
-
   class UnderflowException extends RuntimeException
-
   class MathCalculationException extends RuntimeException("Division by 0")
 
   object PocketCalculator {
@@ -95,9 +92,8 @@ object Exceptions extends App {
       if (y == 0) throw new MathCalculationException
       else x / y
     }
-
   }
 
-  println(PocketCalculator.add(Int.MaxValue, 10))
-  println(PocketCalculator.divide(2, 0))
+  println(PocketCalculator.add(30, 10))
+  println(PocketCalculator.divide(2, 1))
 }

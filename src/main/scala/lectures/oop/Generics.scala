@@ -5,7 +5,6 @@ import exercises.MyList
 object Generics {
 
   //trait MyList[A]  can be also parametrized
-
   class MyList[A]{
   }
 
@@ -18,9 +17,7 @@ object Generics {
 
   // variance problem
   class Animal
-
   class Cat extends Animal
-
   class Dog extends Animal
 
   // 1. yes, List[Cat] extends List[Animal] = COVARIANCE
@@ -32,12 +29,10 @@ object Generics {
 
   // 2. NO = INVARIANCE
   class InvariantList[A]
-
   val invariantAnimalList: InvariantList[Animal] = new InvariantList[Animal]
 
   // 3. Hell, no! CONTRAVARIANCE
   class Trainer[-A]
-
   val trainer: Trainer[Cat] = new Trainer[Animal]
 
   // bounded types
